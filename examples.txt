@@ -1,0 +1,5 @@
+# specified numbers of images with prefix, and output in QHD resolution:
+ ffmpeg -r 24 -f image2 -start_number 3784 -i "_DSC%04d.JPG" -s 2560x1440 -c:v libx264 -pix_fmt yuv420p timelapse_1.mp4
+ 
+ # all JPGs in the folder, in case if there are gaps in numbering of photos
+ ffmpeg -r 16 -pattern_type glob -i '*.JPG' -s hd1080 -c:v libx264 timelapse_2.mp4
